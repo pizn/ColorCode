@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test hl</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+	<script src="highlight.js"></script>
+	<script src="lang-js.js"></script>
+	<script src="lang-css.js"></script>
+	<script src="lang-html.js"></script>
+	<script src="lang-xml.js"></script>
+	<script src="helpers.js"></script>
+    	<script type="text/javascript">
+    		window.onload=function() {	
+    			DlHighlight.HELPERS.highlightByName('fooname', 'pre','', true); 
+    			DlHighlight.HELPERS.highlightByName('cee', 'pre','', true);	
+    			DlHighlight.HELPERS.highlightByName('fefe', 'pre','', true);			
+    		}
+    	</script>
+	</head>
+	<body>
+		<p>Just for test.</p>
+		<pre name="fefe" class="xml">
+			<code>fefef</code>
+			<div class="fefefe">fee</div>
+		</pre>
+		<pre name="cee" class="css">
+			
+.notice h2, .notice h3 {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+		</pre>
+		<pre name="fooname" class="js">
+
+        //修改电子账单时间
+        setStatisticsTime: function() {
+            var billTime = this.data.billInfo.time;
+            if(this.data.stat == 'ok') {
+                var timeDataHtml = '(' +billTime+ ')';
+            } else {
+                var timeDataHtml = billTime;
+            }
+            $A(this.node.query('.ui-box-title .module-statistics-time')).each(function(item, index){
+                item.setHtml(timeDataHtml);
+            });
+        },
+        //电子账单支出flash显示
+        showBillExpenses: function() {
+            //参数传输
+            var billEx = this.data.billInfo.expenses;
+            window.Expenses = function(){
+                var Expenses= {
+                    "name":"总支出",
+                    "summ":billEx['total'],
+                    "detail":[
+                        {"name":"网上购物","summ":billEx['onlineShopping']},
+                        {"name":"水电煤缴费","summ":billEx['sdm']},
+                        {"name":"通讯费缴费","summ":billEx['commun']},
+                        {"name":"信用卡还款","summ":billEx['card']},
+                        {"name":"转账","summ":billEx['transfer']},
+                        {"name":"其他","summ":billEx['other']}
+                        ]
+                    }
+                    return Expenses;
+            }
+            //flash展示
+            swfobject.embedSWF(AP.PageVar.image_domain + "/sys/personal/style/flash/Tree1108.swf?param="+1, "J_myExpenses", "588", "100", "9.0.0", "expressInstall.swf",null, params);
+        },
+        //电子账单收入flash展示
+        showBillIncome: function() {
+            //参数传输
+            var billIn = this.data.billInfo.income;
+            window.Income = function(){
+                var Income= {
+                    "name": "总收入",
+                    "summ": billIn['total'],
+                    "detail":[
+                        {"name":"淘宝交易","summ":billIn['taobao']},
+                        {"name":"转账","summ":billIn['transfer']},
+                        {"name":"其他","summ":billIn['other']}
+                        ]
+                    };
+                    return Income;
+            }
+            //触发事件
+  
+
+
+		</pre>
+	</body>
+</html>
