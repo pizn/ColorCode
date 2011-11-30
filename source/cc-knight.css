@@ -58,9 +58,12 @@ body {
 
 /* XML */
 
-.DlHighlight .xml-tag-close .before { color: #52a; }
+.DlHighlight .xml-tag-open, .DlHighlight .xml-tag-close { color: #A6E22E; }
+.DlHighlight .xml-tag-close .before { color: #F59320; }
+.DlHighlight .xml-tagangle { color: #ABABAB; }
+.DlHighlight .xml-attribute { color: #F59320; }
 
-.DlHighlight .xml-entity { color: #b2a; }
+.DlHighlight .xml-entity { color: #A6E22E; }
 .DlHighlight .xml-entity .before, .DlHighlight .xml-entity .after { color: #607; }
 
 /* CSS */
