@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Test hl</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
-	<script src="highlight.js"></script>
-	<script src="lang-js.js"></script>
-	<script src="lang-css.js"></script>
-	<script src="lang-html.js"></script>
-	<script src="lang-xml.js"></script>
-	<script src="helpers.js"></script>
-    	<script type="text/javascript">
-    		window.onload=function() {	
-    			DlHighlight.HELPERS.highlightByName('fooname', 'pre','', true); 
-    			DlHighlight.HELPERS.highlightByName('cee', 'pre','', true);	
-    			DlHighlight.HELPERS.highlightByName('fefe', 'pre','', true);			
-    		}
-    	</script>
-	</head>
-	<body>
-		<p>Just for test.</p>
-		<pre name="fefe" class="xml">
-			<code>fefef</code>
-			<div class="fefefe">fee</div>
-		</pre>
-		<pre name="cee" class="css">
-			
+    <head>
+        <title>Test hl</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="colorcode.css" media="all" />
+        <script src="highlight.js"></script>
+        <script src="lang-js.js"></script>
+        <script src="lang-css.js"></script>
+        <script src="lang-html.js"></script>
+        <script src="lang-xml.js"></script>
+        <script src="helpers.js"></script>
+        <script type="text/javascript">
+            window.onload=function() {  
+                DlHighlight.HELPERS.highlightByName('fooname', 'pre','', true); 
+                DlHighlight.HELPERS.highlightByName('cee', 'pre','', true); 
+                DlHighlight.HELPERS.highlightByName('fefe', 'pre','', true);            
+            }
+        </script>
+    </head>
+    <body>
+        <p>Just for test.</p>
+<pre name="fefe" class="xml">
+&lt;code&gt;fefef&lt;/code&gt;
+&lt;div class="fefefe"&gt;fee&lt;/div&gt;
+</pre>
+<pre name="cee" class="css">
 .notice h2, .notice h3 {
     color: #000000;
     font-size: 14px;
     font-weight: 600;
 }
-
-		</pre>
-		<pre name="fooname" class="js">
+</pre>
+        <pre name="fooname" class="js">
 
         //修改电子账单时间
         setStatisticsTime: function() {
@@ -89,6 +87,6 @@
   
 
 
-		</pre>
-	</body>
+        </pre>
+    </body>
 </html>
